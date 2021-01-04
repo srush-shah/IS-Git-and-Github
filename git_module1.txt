@@ -1,0 +1,94 @@
+Configuring author and email
+
+# home directory
+$ pwd                                                            
+$ mkdir git-fast            
+$ cd git-fast
+$ pwd    
+$ git config --global --list     
+$ git config --global user.name "Bibhash Roy"
+$ git config --global --list
+$ git config --global user.email "bibhash@whitepeaksoft.com"
+$ git config --global --list
+
+# vi is the editor, ~ is the home directory
+$ vi ~/.gitconfig                                                
+$ cat .gitconfig
+Initializing an empty repository
+
+$ pwd
+$ mkdir myRepoFromScratch
+$ cd myRepoFromScratch
+$ pwd         
+   
+# notice the creation of .git directory                        
+$ git init   
+                       
+# "ls -al" command lists all objects, including hidden                                             
+$ ls -al  
+      
+# without using any editor                                                                 
+$ echo "this is my first file in empty repository" >> firstFileUsingEcho.txt     
+$ ls
+$ cat firstFileUsingEcho.txt
+
+# create the file and enter some contents
+$ vi  secondFileUsingVI.txt                                        
+$ ls
+$ cat secondFileUsingVI.txt
+Existing unversioned project to a repository
+
+$ pwd
+
+# copy the downloaded file
+$ cp /f/Bibhash/Downloads/initializr-verekia-4.0.zip .
+
+# unzipping will create a folder called "initilizr"     
+$ unzip initializr-verekia-4.0.zip                                        
+$ ls -al
+
+# remove copied file
+$ rm initializr-verekia-4.0.zip  
+
+# rename directory                                          
+$ mv initializr/ myRepoFromExistingSource    
+              
+# now we need to add source control to the unversioned repo "myRepoFromExistingSource"
+$ cd myRepoFromExistingSource  
+         
+# Initialized existing source                        
+$ git init            
+
+# .git folder can be seen with ls -al                                                               
+$ ls -al          
+Command Summary - configuration & repository creation
+
+# Typically, you’ll want to use the --global flag to set configuration options for the current user.
+# Define the author's name to be used for all commits by the current user.
+$ git config --global user.name <name>    
+
+# Define the author's email to be used for all commits by the current user.
+$ git config --global user.email <email>   
+
+# For listing all the global configuration at the user level
+$ git config --global --list          
+   
+# Transforms the current directory into a Git repository; the command is the same for creating repo from ..contd..
+# scratch or convert an existing unversioned codebase to a git repository             
+$ git init                                                    
+Command Summary - Accessing Git Help system
+
+# general help
+$ git help
+
+# lists sub-commands
+$ git help -a
+
+# lists concept guides
+$ git help -g
+
+# read about a specific sub-command
+$ git help <command>
+
+# read about a specific concept
+$ git help <concept>

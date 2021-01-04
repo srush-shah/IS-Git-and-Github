@@ -1,0 +1,113 @@
+Copying a GitHub repository
+
+$ cd <project_directory>
+$ git clone https://github.com/<user>/<example_project>
+$ cd example_project
+$ ls -al
+
+Adding your changes
+
+# home directory
+$ pwd                          
+$ cd git-fast
+$ ls
+$ cd myRepoFromScratch
+$ ls
+
+# create a file and add some content
+$ vi demoFile1                    
+$ cat demoFile1
+$ git status
+$ git add demoFile1
+$ git rm --cached demoFile1
+$ git status
+Committing changes
+
+# home directory
+$ pwd                          
+$ cd git-fast
+$ ls
+$ cd myRepoFromScratch
+$ ls
+
+# create a file and add some content
+$ vi demoFile1                    
+$ cat demoFile1
+$ git status
+$ git add demoFile1
+$ git rm --cached demoFile1
+$ git status
+Command Summary - add and commit
+
+$ git add
+$ git commit -m "message goes here"
+
+How to check your repo status
+
+# cd to /c/Users/HP-PC/git-fast/myRepoFromScratch
+$ pwd
+$ ls
+
+# start with a clean working directory
+$ git status                
+
+# create file and add some contents such as "I want to shed 15 kg 5 weeks"        
+$ vi weightLossChart    
+
+# create file and add some contents such as "I want to add more green vegetables to my diet"    
+$ vi dietChart                  
+$ git status           
+
+# same as "git status" since "long" option is the default one (compare output)    
+$ git status --long        
+$ git status -s                                  # status "??" for untracked file
+$ git add weightLossChart
+$ git status -s                                 # status "A"
+$ git commit -m "1st commit for weightLossChart"
+$ git status -s     
+$ vi weightLossChart                    # make some changes to the file
+$ git status -s                                # status "M"
+$ git add weightLossChart  
+$ git status -s                                # status "M"
+$ git commit -m "2nd commit for weightLossChart"
+$ git status -s   
+$ mv weightLossChart weightLossChart2
+$ git status -s                             # status "D"
+How to check commit history
+
+# displays the entire commit history using the default formatting
+$ git log                
+
+# oneline condensed view of each commit history                      
+$ git log --oneline
+
+# Only display commits that include the specified file                             
+$ git log <file>          
+
+# Show only commits that occur between <since> and <until>. Both arguments can be either a commit ID ...contd.
+# a branch, name, HEAD, or any other kind of revision reference.                    
+$ git log <since>..<until>                     
+
+# Limit the number of commits by <limit>. For example, git log -n 3 will display only 3 commits.  
+$ git log -n <limit>                           
+Command Summary - status & log
+
+# provides a status report of the repo
+$ git status             
+
+# displays the entire commit history using the default formatting                       
+$ git log                
+
+# oneline condensed view of each commit history                      
+$ git log --oneline           
+
+# Only display commits that include the specified file                 
+$ git log <file>     
+
+# Show only commits that occur between <since> and <until>. Both arguments can be either a commit ID, a branch
+# name, HEAD, or any other kind of revision reference.                        
+$ git log <since>..<until>                    
+
+# Limit the number of commits by <limit>. For example, git log -n 3 will display only 3 commits.
+$ git log -n <limit>                         
+
